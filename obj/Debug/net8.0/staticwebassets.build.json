@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6MkpVVg+NgGGOq8/kKMHuXbM23qXKtCRrGclpi+VdiI=",
+  "Source": "csharp-stocks",
+  "BasePath": "_content/csharp-stocks",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
