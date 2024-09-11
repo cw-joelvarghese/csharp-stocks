@@ -22,11 +22,12 @@ public class StocksController : ControllerBase
         _stockService = stockService;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet(Name = "GetStocks")]
     public async Task<IActionResult> Get([FromQuery] Request request)
     {
         var filter = _mapper.Map<Filters>(request);
         var a = await _stockService.GetByFilterAsync(filter);
-        return Ok(a);
+        var stocks = _mapper.Map<List<StockDTO>>(a);
+        return Ok(stocks);
     }
 }
