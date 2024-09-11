@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("csharp-stocks")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaea930bc6860efcd63b37bad177d4922c9d1c92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7afac3d0c71e3e0a03222b1cc78357de6c25ebf1")]
 [assembly: System.Reflection.AssemblyProductAttribute("csharp-stocks")]
 [assembly: System.Reflection.AssemblyTitleAttribute("csharp-stocks")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

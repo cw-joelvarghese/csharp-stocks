@@ -1,5 +1,6 @@
 using csharp_stocks.Models;
 using Microsoft.EntityFrameworkCore;
+namespace csharp_stocks.Data;
 
 public class DatabaseContext : DbContext
 {

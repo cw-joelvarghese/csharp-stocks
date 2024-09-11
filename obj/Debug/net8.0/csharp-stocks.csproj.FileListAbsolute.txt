@@ -121,3 +121,5 @@ C:\Users\joel.v\Desktop\Code\csharp-stocks\bin\Debug\net8.0\runtimes\win-x64\nat
 C:\Users\joel.v\Desktop\Code\csharp-stocks\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\joel.v\Desktop\Code\csharp-stocks\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\joel.v\Desktop\Code\csharp-stocks\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+c:\Users\joel.v\Desktop\Code\csharp-stocks\bin\Debug\net8.0\Dapper.dll
+c:\Users\joel.v\Desktop\Code\csharp-stocks\obj\Debug\net8.0\csharp-stocks.sourcelink.json

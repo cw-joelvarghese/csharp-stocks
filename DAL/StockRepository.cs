@@ -1,34 +1,48 @@
+using System.Data;
+using csharp_stocks.Data;
 using csharp_stocks.Models;
-using Microsoft.EntityFrameworkCore;
+using Dapper;
 
 namespace csharp_stocks.DAL;
 
 public class StockRepositroy : IStockRepository
 {
-    private readonly DatabaseContext _context;
-    public StockRepositroy(DatabaseContext databaseContext)
+    private readonly IDbConnection _dbConnection;
+    public StockRepositroy(DatabaseConnection databaseConnection)
     {
-        _context = databaseContext;
+        _dbConnection = databaseConnection.CreateConnection();
     }
     public async Task<IEnumerable<Stock>> GetAllAsync()
     {
-        return await _context.Stocks.ToListAsync();
+        const string sql = "SELECT * FROM stocks";
+        return await _dbConnection.QueryAsync<Stock>(sql);
     }
+
     public async Task<IEnumerable<Stock>> GetByFilter(Filters filters)
     {
-        IQueryable<Stock> items = _context.Stocks;
+
+        const string sql = "SELECT * FROM stocks";
+        var whereString = " WHERE ";
+
         if (filters.Fuel != null && filters.Fuel.Count > 0)
         {
-            items = items.Where(s => filters.Fuel.Contains(s.Fuel));
+            whereString += "Fuel IN @Fuel AND ";
         }
         if (filters.MinBudget != null)
         {
-            items = items.Where(s => s.Price >= filters.MinBudget);
+            whereString += "price >= @MinBudget AND ";
         }
         if (filters.MaxBudget != null)
         {
-            items = items.Where(s => s.Price <= filters.MaxBudget);
+            whereString += "price <= @MaxBudget AND ";
         }
-        return await items.ToListAsync();
+        whereString = Utils.TrimEnd(whereString, " AND ");
+        whereString = Utils.TrimEnd(whereString, " WHERE ");
+        return await _dbConnection.QueryAsync<Stock>(sql + whereString, new
+        {
+            filters.MaxBudget,
+            filters.MinBudget,
+            Fuel = filters.Fuel?.Select(x => (int)x).ToList()
+        });
     }
 }
