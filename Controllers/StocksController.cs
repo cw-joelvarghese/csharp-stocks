@@ -28,13 +28,5 @@ public class StocksController : ControllerBase
         var filter = _mapper.Map<Filters>(request);
         var a = await _stockService.GetByFilterAsync(filter);
         return Ok(a);
-        // Console.WriteLine(a[0].price);
-        // return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        // {
-        //     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-        //     TemperatureC = Random.Shared.Next(-20, 55),
-        //     Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        // })
-        // .ToArray();
     }
 }
