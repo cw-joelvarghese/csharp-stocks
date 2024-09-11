@@ -8,4 +8,6 @@ public class StockDTO
     public int Id { get; set; }
     public FuelType Fuel { get; set; }
     public string FormattedPrice {get; set;}
+    public int Km { get; set; }
+    public bool IsValueForMoney {get; set;}
 }

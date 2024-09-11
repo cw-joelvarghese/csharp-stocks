@@ -1,3 +1,5 @@
+using csharp_stocks.Models;
+
 public static class Utils {
     public static string TrimEnd(this string source, string value)
     {
@@ -26,5 +28,9 @@ public static class Utils {
             double crores = number / 10000000.0;
             return $"{crores:0.##} Crore";
         }
+    }
+
+    public static bool IsValueForMoney(Stock stock) {
+        return stock.Price <= 200000 && stock.Km < 10000;
     }
 }

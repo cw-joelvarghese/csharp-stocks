@@ -22,6 +22,8 @@ public class MappingProfile : Profile
               .ForMember(dest => dest.MakeYear, opt => opt.MapFrom(src => src.MakeYear))
               .ForMember(dest => dest.ModelName, opt => opt.MapFrom(src => src.ModelName))
               .ForMember(dest => dest.Price, opt => opt.MapFrom(src => src.Price))
-              .ForMember(dest => dest.FormattedPrice, opt => opt.MapFrom(src => Utils.FormatNumber(src.Price)));
+              .ForMember(dest => dest.Km, opt => opt.MapFrom(src => src.Km))
+              .ForMember(dest => dest.FormattedPrice, opt => opt.MapFrom(src => Utils.FormatNumber(src.Price)))
+              .ForMember(dest => dest.IsValueForMoney, opt => opt.MapFrom(src => Utils.IsValueForMoney(src)));
     }
 }

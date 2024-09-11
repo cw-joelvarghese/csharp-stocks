@@ -18,8 +18,11 @@ public class StockService : IStockService
     {
         return await _stockRepository.GetAllAsync();
     }
-    public async Task<IEnumerable<Stock>> GetByFilterAsync(Filters filters)
+    public async Task<IEnumerable<StockDTO>> GetByFilterAsync(Request request)
     {
-        return await _stockRepository.GetByFilter(filters);
+        var filters = _mapper.Map<Filters>(request);
+        var stocks = await _stockRepository.GetByFilter(filters);
+        var stocksDto = _mapper.Map<List<StockDTO>>(stocks);
+        return stocksDto;
     }
 }

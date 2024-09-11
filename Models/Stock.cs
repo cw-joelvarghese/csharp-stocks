@@ -7,5 +7,6 @@ public class Stock
     public string ModelName { get; set; }
     public int Price { get; set; }
     public int Id { get; set; }
+    public int Km { get; set; }
     public FuelType Fuel { get; set; }
 }

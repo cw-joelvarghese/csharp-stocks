@@ -5,5 +5,5 @@ namespace csharp_stocks.BAL;
 public interface IStockService
 {
     Task<IEnumerable<Stock>> GetAllAsync();
-    Task<IEnumerable<Stock>> GetByFilterAsync(Filters filters);
+    Task<IEnumerable<StockDTO>> GetByFilterAsync(Request request);
 }

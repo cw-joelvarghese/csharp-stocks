@@ -25,9 +25,9 @@ public class StocksController : ControllerBase
     [HttpGet(Name = "GetStocks")]
     public async Task<IActionResult> Get([FromQuery] Request request)
     {
-        var filter = _mapper.Map<Filters>(request);
-        var a = await _stockService.GetByFilterAsync(filter);
-        var stocks = _mapper.Map<List<StockDTO>>(a);
+        
+        var stocks = await _stockService.GetByFilterAsync(request);
+        
         return Ok(stocks);
     }
 }
