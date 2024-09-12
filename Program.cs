@@ -6,10 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddControllers();
-builder.Services.AddSingleton(new DatabaseConnection("Server=localhost; User ID=root; Password=root; Database=stocks"));
+builder.Services.AddSingleton(new DatabaseConnection(connectionString));
 // builder.Services.AddDbContext<DatabaseContext>(options => options.UseMySQL("Server=localhost; User ID=root; Password=root; Database=stocks")); 
 builder.Services.AddScoped<IStockRepository, StockRepositroy>();
 builder.Services.AddScoped<IStockService, StockService>();
