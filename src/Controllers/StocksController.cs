@@ -10,15 +10,9 @@ namespace csharp_stocks.Controllers;
 [Route("[controller]")]
 public class StocksController : ControllerBase
 {
-
-    private readonly ILogger<StocksController> _logger;
-
-    private readonly IMapper _mapper;
     private readonly IStockService _stockService;
-    public StocksController(ILogger<StocksController> logger, IMapper mapper, IStockService stockService)
+    public StocksController(IStockService stockService)
     {
-        _mapper = mapper;
-        _logger = logger;
         _stockService = stockService;
     }
 
@@ -27,6 +21,7 @@ public class StocksController : ControllerBase
     {
         
         var stocks = await _stockService.GetByFilterAsync(request);
+        
         
         return Ok(stocks);
     }

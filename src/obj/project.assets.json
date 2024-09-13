@@ -4086,19 +4086,19 @@
     ]
   },
   "packageFolders": {
-    "/home/joel/.nuget/packages/": {}
+    "C:\\Users\\joel.v\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/joel/Code/csharp-stocks/src/csharp-stocks.csproj",
+      "projectUniqueName": "C:\\Users\\joel.v\\Desktop\\Code\\csharp-stocks\\src\\csharp-stocks.csproj",
       "projectName": "csharp-stocks",
-      "projectPath": "/home/joel/Code/csharp-stocks/src/csharp-stocks.csproj",
-      "packagesPath": "/home/joel/.nuget/packages/",
-      "outputPath": "/home/joel/Code/csharp-stocks/src/obj/",
+      "projectPath": "C:\\Users\\joel.v\\Desktop\\Code\\csharp-stocks\\src\\csharp-stocks.csproj",
+      "packagesPath": "C:\\Users\\joel.v\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joel.v\\Desktop\\Code\\csharp-stocks\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/joel/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\joel.v\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -4116,6 +4116,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4168,7 +4173,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
